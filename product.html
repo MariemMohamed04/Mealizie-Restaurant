@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mealzie</title>
+    <!-- Font-Awesome -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/font-awesome/css/font-awesome.min.css"
+    />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <!-- Main CSS Stylesheet -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <section id="product-page">
+      <div class="container">
+        <nav
+          style="
+            --bs-breadcrumb-divider: url(
+              &#34;data:image/svg + xml,
+              %3Csvgxmlns='http://www.w3.org/2000/svg'width='8'height='8'%3E%3Cpathd='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z'fill='%236c757d'/%3E%3C/svg%3E&#34;
+            );
+          "
+          aria-label="breadcrumb"
+        >
+          <ol class="breadcrumb mt-3 ms-3">
+            <li class="breadcrumb-item">
+              <a href="#"
+                ><i class="fa-solid fa-house" style="color: #fc5047"></i
+              ></a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Pizza</li>
+          </ol>
+        </nav>
+        <div class="row mt-5 justify-content-around">
+          <div class="product-slider-container col-md-6">
+            <div class="product-slider">
+              <div class="slides text-center">
+                <div class="slide">
+                  <img src="" alt="Product 1" />
+                </div>
+                <div class="slide">
+                  <img src="./assets/Images/2.jpg" alt="Product 2" />
+                </div>
+              </div>
+            </div>
+            <div class="thumbnail-list">
+              <button class="prev-slide">&#10094;</button>
+              <img
+                src="/assets/Images/1.jpg"
+                alt="Thumbnail 1"
+                class="active"
+              />
+              <img src="/assets/Images/2.jpg" alt="Thumbnail 2" />
+              <button class="next-slide">&#10095;</button>
+              <!-- Add more thumbnails as needed -->
+            </div>
+          </div>
+          <div class="col-md-5">
+            <form action="/">
+              <h1 id="meal-name">Pizza</h1>
+              <h1 id="meal-price">$20.00</h1>
+              <p class="text-secondary" id="meal-description">Ingredients:</p>
+              <label for="pizza-quantity" class="text-secondary mt-3"
+                >Quantity:</label
+              >
+              <br />
+              <input
+                name="pizza-quantity"
+                id="pizza-quantity"
+                type="number"
+                min="1"
+                required
+                value="1"
+                class="border border-secondary p-2 mt-3 text-secondary"
+              />
+              <p class="text-secondary mt-3">
+                Available Quantity: <br />
+                999
+              </p>
+              <input
+                type="submit"
+                class="btn btn-primary rounded rounded-pill py-3 px-5"
+                value="Add To Cart"
+                id="add-to-cart"
+              />
+            </form>
+            <label class="add-fav mt-3">
+              <input type="checkbox" />
+              <i class="fa-solid fa-heart"> </i>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <!-- Jquery -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Jquery UI -->
+    <script src="./node_modules/jquery-ui/dist/jquery-ui.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/ca1800230a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/product-js.js"></script>
+  </body>
+</html>

@@ -1,9 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap");
 :root {
-  --main-background-color: #FFFFFF;
+  --main-background-color: #ffffff;
   --primary-color: #2b2f3e;
-  --secondary-color: #FC5047;
+  --secondary-color: #fc5047;
   --tertiary-color: #959595;
   --primary-font: "Roboto Slab", serif;
   --secondary-font: "Open Sans", sans-serif;
+}
+body {
+  font-family: var(--primary-font);
+}
+h1 {
+  font-weight: 400;
+}
+#pizza-quantity {
+  width: 96px;
+  height: 42px;
+  border-color: var(--tertiary-color);
+}
+p {
+  color: var(--tertiary-color);
+}
+#add-to-cart {
+  background-color: var(--secondary-color);
+  border: none !important;
+  transition: all 0.5s ease;
+}
+#add-to-cart:hover {
+  background-color: #fa372d;
+}
+.carousel-item {
+  height: 500px;
+  width: 300px;
+}
+.add-fav {
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s ease;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 1px #eee;
+
+  .fa-heart {
+    font-size: 24px;
+    color: #c9c9c9;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+  }
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    &:checked + .fa-heart {
+      color: red;
+    }
+  }
+}
+
+.product-slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.thumbnail-list {
+  display: flex;
+  margin-top: 10px;
+}
+.thumbnail-list img {
+  width: 50px;
+  height: auto;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.thumbnail-list button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.thumbnail-list img.active {
+  border: 2px solid var(--secondary-color); /* You can adjust the border style */
+}
+.thumbnail-list img:last-child {
+  margin-right: 0;
+}
+.product-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.slide {
+  flex: 0 0 auto;
+  width: 100%;
+}
+img {
+  width: auto;
+  height: 400px;
+}
+.prev-slide {
+  left: 0;
+}
+.next-slide {
+  right: 0;
 }
