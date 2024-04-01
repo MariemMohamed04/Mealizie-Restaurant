@@ -1,6 +1,12 @@
+
 document.addEventListener('DOMContentLoaded', function () {
+    const thumbnailList = document.querySelectorAll(".thumbnail-list img");
     const slides = document.querySelector('.slides');
     const slideWidth = document.querySelector('.slide').offsetWidth;
+    const slide = document.querySelectorAll('.slide img');
+    const modal = document.getElementById("modal");
+    const modalImg = document.querySelector(".modal-content");
+    const closeBtn = document.querySelector(".close");
     let currentIndex = 0;
     document.querySelector("#meal-price").innerText = "$" + (Math.random() * (20 - 10) + 10).toFixed(2);
 
@@ -18,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll(".slide img").forEach(function (imgSrc) {
                 imgSrc.src = data.meals[0].strMealThumb;
             });
-            document.querySelectorAll(".thumbnail-list img").forEach(function (imgSrc) {
+            thumbnailList.forEach(function (imgSrc) {
                 imgSrc.src = data.meals[0].strMealThumb;
             });
             document.querySelector("#meal-description").innerText += concatenateIngredients(data.meals[0], 'strIngredient');
@@ -37,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 concatenatedIngredients += object[key] + ', ';
             }
         }
-        return concatenatedIngredients.trim().slice(0, -1); // Remove trailing comma and whitespace
+        return concatenatedIngredients.trim().slice(0, -1);
     }
 
     function goToSlide(index) {
@@ -45,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateThumbnailActive(index) {
-        document.querySelectorAll('.thumbnail-list img').forEach(function (thumbnail, i) {
+        thumbnailList.forEach(function (thumbnail, i) {
             thumbnail.classList.toggle('active', i === index);
         });
     }
@@ -62,12 +68,22 @@ document.addEventListener('DOMContentLoaded', function () {
         updateThumbnailActive(currentIndex);
     });
 
-    document.querySelectorAll('.thumbnail-list img').forEach(function (thumbnail, i) {
+    thumbnailList.forEach(function (thumbnail, i) {
         thumbnail.addEventListener('click', function () {
             currentIndex = i;
             goToSlide(currentIndex);
             updateThumbnailActive(currentIndex);
         });
+    });
+    slide.forEach(function (slideI) {
+        slideI.addEventListener("click", function () {
+            modal.style.display = "block"
+            modalImg.src = this.src;
+            console.log(modalImg.src);
+        });
+    });
+    closeBtn.addEventListener("click", function () {
+        modal.style.display = "none";
     });
 });
 
