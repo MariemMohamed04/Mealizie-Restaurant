@@ -10,3 +10,16 @@
 
 }
 
+
+i{
+    color: var(--secondary-color);
+  }
+.category-info{
+    background-color:var(--background-gray)
+}
+a{
+    text-decoration: none;
+    color:var(--primary-color);
+    font:bold 18px var(--primary-font);
+
+}
