@@ -47,3 +47,12 @@ a {
 .card-body .card-text {
   font: 400 24px var(--primary-font);
 }
+
+.cart{
+    color: var(--secondary-color);
+}
+.card-title {
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide any overflowing content */
+  text-overflow: ellipsis; /* Display an ellipsis (...) when text overflows */
+}
